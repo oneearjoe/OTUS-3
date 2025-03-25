@@ -7,9 +7,9 @@ class Triangle(Figure):
         if side_1 <= 0 or side_2 <= 0 or side_3 <= 0:
             raise ValueError("Side must be a positive value")
         if (
-            side_1 + side_2 < side_3
-            and side_1 + side_3 < side_2
-            and side_2 + side_3 < side_1
+            side_1 + side_2 <= side_3
+            or side_1 + side_3 <= side_2
+            or side_2 + side_3 <= side_1
         ):
             raise ValueError("It is impossible to create a triangle with such sides")
         self.side_1 = side_1
